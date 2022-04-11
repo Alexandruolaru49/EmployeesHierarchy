@@ -1,0 +1,49 @@
+Functia hire:
+    Am alocat memorie pentru un nod nou al arborelui si cu ajutorul unei functii "search" care cauta si returneaza un pointer care reprezinta un nod din arbore cu numele cautat.
+    I-am gasit nodul manager al acestuia si l-am adaugat in vectorul teams al acestuia.
+
+Functia fire:
+    Gaseste nodul care trebuie eliminat si in cazul in care il gaseste in arbore si e diferit de nodul radacina: 
+        Daca nodul pe care il eliminam nu are copii la randul sau pur si simplu il eliminam din vectorul teams al managerului sau.
+        Daca nodul are copii la randul sau, adaugam pointerii din vectorul teams al acestuia managerului nodului pe care vrei sa il elimini.
+
+Functia promote:
+    Gasim nodul caruia vrem sa il promovam cu ajutorul functiei search:
+        Daca nodul pe care il cautam nu are copii, il stergem din vectorul teams al managerului sau si il adaugam cu functia hire sub noul sau manager
+        Daca nodul are copii, dupa ce il mutam pe acesta, ii mutam si copiii in echipa fostului sau angajat.
+
+Functia move_employee:
+    Gasim nodul pe care vrem sa il mutam si il mutam sub noul manager , iar copiii lui (daca exista) sunt mutati sub vechiul lui manager.
+
+
+Functia move_team:
+    Gasim nodul din varful echipei pe care dorim sa o mutam si mutam ierarhia sub noul manager primit ca parametru.
+
+
+Functia fire_team:
+    Gasim nodul din varful echipei pe care dorim sa o concediem. 
+    Stergem pointerul respectiv din vectorul teams al managerului si dezalocam memorie pentru toata ierarhia eliminata cu functia destroy_tree.
+
+
+Functia get_employees_by_manager:
+    Gasim nodul caruia vrem sa ii afisam toti angajatii.
+    Am creat un arbore nou , care are ca radacina un nod cu numele "arbore" , iar cu ajutorul functiei Add_To_Tree (functie ajutatoare) am adaugat in acel arbore toti angajatii respectivului nod ( functia Add_To_Tree este o functie recursiva care apeleaza functia hire pentru fiecare nod al unui nod primit ca parametru).
+    Am afisat mai apoi toti copiii nodului "arbore".
+
+
+Functia get_employees_by_level:
+    Am creat un nou arbore , care are ca radacina un nod cu numele "arbore". In acesta, vom insera toate nodurile care se afla pe nivelul "level" primit ca parametru;
+    M-am folosit de doua functii ajutatoare: prima afla nivelul pe care se afla un anumit nod , iar a doua parcurge toata ierarhia si adauga fiecare nod care se afla pe nivelul cerut in arborele nou creat.
+    Am afisat mai apoi copiii nodului "arbore" care reprezinta toate nodurile care se afla pe nivelul cerut.
+
+
+Functia get_best_manager:
+    Am creat un nou arbore, care are ca radacina un nod cu numele "arbore". Aici vom salva nodul/nodurile care au numarul maxim de copii.
+    M-am ajutat de functia auxiliara Best_Manager, care adauga in noul arbore nodul curent daca acesta are numar maxim de copii, sau sterge si reconstruieste arborele de la 0 daca nodul are un numar mai mare decat numarul maxim de copii, adaugandu-l si pe el in arbore.
+    Sunt afisati copiii nodului "arbore" care reprezinta nodul/nodurile care au numarul maxim de copii.
+
+
+Functia reorganize:
+    Am folosit o functia auxiliara, numita "MoveTeamFromTree1ToTree2" care muta o echipa dintr-o ierarhie primita ca parametru intr-o alta.
+    Cu ajutorul acestei functii am putut reorganiza arborele si de a face ca nodul primit ca parametru sa devina noua radacina a arborelui.
+    
