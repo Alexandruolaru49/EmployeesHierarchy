@@ -1,3 +1,6 @@
+Proiect care construieste, modifica si rearanjeaza ierarhii de angajati, folosind arbori.
+
+
 Functia hire:
     Am alocat memorie pentru un nod nou al arborelui si cu ajutorul unei functii "search" care cauta si returneaza un pointer care reprezinta un nod din arbore cu numele cautat.
     I-am gasit nodul manager al acestuia si l-am adaugat in vectorul teams al acestuia.
